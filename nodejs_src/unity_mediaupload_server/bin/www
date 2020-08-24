@@ -1,0 +1,115 @@
+#!/usr/bin/env node
+
+/*
+ * bin/www (as part of UnityMediaUpload server)
+ *
+ * Description: Additional server configuration.
+
+ * Supported Node.js: 4.2.6 (tested)
+ *
+ * Author: Nico Reski
+ * Web: https://reski.nicoversity.com
+ * Twitter: @nicoversity
+ * GitHub: https://github.com/nicoversity
+ * 
+ */
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('unity_mediaupload_server:server');
+var fs = require("fs");
+
+// setup HTTP / HTTPS config
+//var http = require('http');
+var https = require('https'); 
+
+/**
+ * Get port from environment and store in Express.
+ */
+var hostname = 'USER_SERVER_URL';
+var port = normalizePort(process.env.PORT || 'USER_PORT');
+app.set('port', port);
+
+/**
+ * Enable SSL / TLS (https support).
+ */
+const options = {
+  // for HTTPS support, setup references to configuration, e.g. via Let's Encrypt
+  key: fs.readFileSync("PATH_TO_PRIVATE_KEY_FOR_HTTPS_ACCESS"),
+  cert: fs.readFileSync("PATH_TO_FULL_KEYCHAIN_FOR_HTTPS_ACCESS")
+};
+
+/**
+ * Create HTTP / HTTPS server.
+ */
+//var server = http.createServer(app);
+var server = https.createServer(options, app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+//server.listen(port);
+server.listen(port, hostname);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

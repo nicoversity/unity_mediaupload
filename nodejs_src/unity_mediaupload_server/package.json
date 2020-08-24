@@ -1,0 +1,18 @@
+{
+  "name": "unity_media_upload-server",
+  "version": "0.0.1",
+  "description": "Simple Node.js server to demonstrate media file upload (as binary data) from Unity via HTTP PUT request, including some quality-of-life API calls via HTTP GET request in order to access uploaded media files.",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "nicoversity",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1",
+    "hbs": "~3.1.0"
+  }
+}
