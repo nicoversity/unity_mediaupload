@@ -35,7 +35,7 @@ This project has been built using the following specifications:
 
 Additional resources used to create this project have been accessed as follows:
 
-* [SavWav](https://gist.github.com/R-WebsterNoble/70614880b0d3940d3b2b741fbbb311a2) script forked *by* R-WebsterNoble, based on [original implementation](](http://forum.unity3d.com/threads/119295-Writing-AudioListener.GetOutputData-to-wav-problem?p=806734&viewfull=1#post806734) *by* Gregorio Zanon's script
+* [SavWav](https://gist.github.com/R-WebsterNoble/70614880b0d3940d3b2b741fbbb311a2) script forked *by* R-WebsterNoble, based on [original implementation](http://forum.unity3d.com/threads/119295-Writing-AudioListener.GetOutputData-to-wav-problem?p=806734&viewfull=1#post806734) *by* Gregorio Zanon's script
 * customization for `System.DateTime.UtcNow` in C# *via* [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
 * `ScreenCapture` API in Unity3D via [docs.unity3d.com](https://docs.unity3d.com/ScriptReference/ScreenCapture.CaptureScreenshot.html)
 * `UnityWebRequest` API in Unity3D via [docs.unity3d.com](https://docs.unity3d.com/Manual/UnityWebRequest-UploadingRawData.html )

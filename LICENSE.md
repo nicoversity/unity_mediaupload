@@ -17,4 +17,4 @@ This project uses a mix of the following projects/frameworks/libraries/sdks/...,
 
 * [Unity3D](https://unity.com) 2019.2.17f1 Personal (OS X release)
 * [Node.js](https://nodejs.org/en/) 4.2.6 (Linux release, running on Ubuntu)
-* [SavWav](https://gist.github.com/R-WebsterNoble/70614880b0d3940d3b2b741fbbb311a2) script forked *by* R-WebsterNoble, based on [original implementation](](http://forum.unity3d.com/threads/119295-Writing-AudioListener.GetOutputData-to-wav-problem?p=806734&viewfull=1#post806734) *by* Gregorio Zanon's script
+* [SavWav](https://gist.github.com/R-WebsterNoble/70614880b0d3940d3b2b741fbbb311a2) script forked *by* R-WebsterNoble, based on [original implementation](http://forum.unity3d.com/threads/119295-Writing-AudioListener.GetOutputData-to-wav-problem?p=806734&viewfull=1#post806734) *by* Gregorio Zanon's script
